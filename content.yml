@@ -1,0 +1,12 @@
+contacts:
+  name: John Doe
+  title: Software Engineer
+  email: jdoe@example.com
+  address: "City,Country"
+  location: Country
+  github:
+    url: https://github.com/john_doe/
+    displayText: "@johndoe"
+
+palette:
+  primary: "#3730a3"
