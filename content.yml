@@ -101,7 +101,7 @@ experience:
        - position: Dolor
          from: 2001 Jan
          to: 2001 Feb
-         location: Consecteturit
+         location: adipiscing
          descritpion:
               - Lorem ipsum dolor
               - Consectetur adipiscing elit
@@ -110,7 +110,7 @@ experience:
          product: Ipsum
          from: 2000 Dec
          to: 2000 Jan
-         location: Consecteturit
+         location: elit
          descritpion:
               - Lorem ipsum dolor
               - Consectetur adipiscing elit
