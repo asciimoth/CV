@@ -1,4 +1,5 @@
 #import "@preview/flagada:0.1.0" : *
+#import "@preview/cmarker:0.1.5"
 
 #let cont = yaml("content.yml")
 
@@ -37,6 +38,15 @@
   )
   h(1pt*cont.style.text/3)
 }
+
+#let bottomText(txt) = {
+  set align(center)
+  set text(
+    1pt*cont.style.bottom_text,
+  )
+  txt
+}
+
 
 #let title(term, sub) = {
   pad(text(
@@ -98,7 +108,8 @@
 
 #let textOrList(data) = {
   if type(data) == str {
-    box[#data]
+    //box[#data]
+    cmarker.render(data)
   } else {
     for elem in data {
       box[#bullet #elem]
@@ -193,13 +204,15 @@
 #title[#cont.contacts.name][#cont.contacts.title]
 #location(cont.contacts)#h(1fr)#flinks(cont.contacts.links)
 
+#show link: set text(fill: rgb(cont.palette.links))
+
 #cont.about
 
 #grid(
   columns: (7fr, 4.5fr),
   column-gutter: 1em,
   rect[
-    #p[Experience][
+    #p[Commercial experience][
       #for job in cont.experience [
         #fjob(job) #linebreak()
         #period(job) #h(1fr) #location(job)
@@ -208,10 +221,18 @@
 
       ]
     ]
+    #if ("other_experience" in cont) [
+      #p[Other experience][
+        #for blk in cont.other_experience [
+          === #blk.title
+          #textOrList(blk.text)
+        ]
+      ]
+    ]
   ],
   rect[
     #if ("objective" in cont) [
-      #p[Objective][#cont.objective]
+      #p[Objective][#textOrList(cont.objective)]
     ]
     #if ("expertise" in cont) [
       #p[Expertise][#fskills(cont.expertise)]
@@ -230,8 +251,13 @@
     ]
     // TODO
     #if ("achievements" in cont) [
-      #p[Achievements][#cont.achievements]
+      #p[Achievements][#textOrList(cont.achievements)]
     ]
     #linebreak()#linebreak()
   ],
 )
+#align(bottom)[
+  #if ("consent" in cont) [
+    #bottomText(cont.consent)
+  ]
+]

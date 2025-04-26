@@ -1,7 +1,7 @@
 contacts:
        name: John Doe
        title: Software Engineer
-       location: City,Country
+       location: City, Country
        links:
               - text: jdoe@example.com
                 ico: email
@@ -15,6 +15,9 @@ contacts:
               - text: johndoe
                 ico: linkedin
                 url: https://www.linkedin.com/in/johndoe/
+              - text: JohnDoe
+                ico: habr-company
+                url: https://habr.com/ru/users/JohnDoe/articles/
 
 about: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
        do eiusmod tempor incididunt ut labore et dolore magnam aliquam
@@ -81,7 +84,7 @@ langs:
 
 # Optional
 achievements: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-       do eiusmod tempor incididunt ut labore et dolore magnam aliquam"
+       do eiusmod tempor incididunt ut labore et dolore magnam"
 
 # TODO: Links
 experience:
@@ -115,6 +118,17 @@ experience:
               - Lorem ipsum dolor
               - Consectetur adipiscing elit
 
+# Optional
+other_experience:
+       - title: Lorem
+         text: "Ipsum [dolor](https://example.com) sit amet, consectetur adipiscing elit"
+       - title: Lorem
+         text: "Ipsum [dolor](https://example.com) sit amet, consectetur adipiscing elit"
+
+# Optional
+consent: I give my consent to the processing of my personal data,
+         of my own free will and in my own interests.
+
 style:
        text: 10
        title: 14
@@ -129,8 +143,10 @@ style:
        bar_length: 15
        bar_height: 0.3
        bar_rad: 2
+       bottom_text: 8
 
 palette:
        page: "ffffff"
        primary: "3730a3"
-       grid: "#e4e5ea"
+       grid: "e4e5ea"
+       links : "4C6AC6"
