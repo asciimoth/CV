@@ -1,4 +1,4 @@
-#import "@preview/flagada:0.1.0" : *
+#import "@preview/flagada:0.2.0" : *
 #import "@preview/cmarker:0.1.5"
 
 #let cont = yaml("content.yml")
